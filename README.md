@@ -3,6 +3,6 @@
 
 # Integrantes do grupo:
 - Nina Coutinho
-- Evelin Vitória
+- Evelyn Vitória
 - Kaio Souto
 - Mariana Macedo
