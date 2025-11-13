@@ -1,6 +1,6 @@
 # avaliacao-de-jogos
 
-#Integrantes do grupo:
+# Integrantes do grupo:
 - Nina Coutinho
 - Evelin Vitória
 - Kaio Souto
