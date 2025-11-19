@@ -1,48 +1,33 @@
-<!-- Carousel -->
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-    <!-- Indicators/dots -->
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-    </div>
+<div class="bg-black" style="position: relative; text-align: center;">
+    <img src="imagens/banner.png" style="max-width:50%; height:auto;">
 
-    <!-- The slideshow/carousel -->
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://www.w3schools.com/bootstrap5/la.jpg" alt="Los Angeles" class="d-block" style="width:100%">
-            <div class="carousel-caption">
-                <h3>Los Angeles</h3>
-                <p>We had such a great time in LA!</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="https://www.w3schools.com/bootstrap5/chicago.jpg" alt="Chicago" class="d-block" style="width:100%">
-            <div class="carousel-caption">
-                <h3>Chicago</h3>
-                <p>Thank you, Chicago!</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="https://www.w3schools.com/bootstrap5/ny.jpg" alt="New York" class="d-block" style="width:100%">
-            <div class="carousel-caption">
-                <h3>New York</h3>
-                <p>We love the Big Apple!</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Left and right controls/icons -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </button>
+    <h1 style="position: absolute; top: 40%; left: 70%; transform: translateX(-50%); 
+               color: white; font-size: 2em; font-weight: bold;">
+        Game Boxe
+    </h1>
+    <p style="position: absolute; top: 50%; left: 70%; transform: translateX(-50%);
+              color: white; font-size: 1.0em; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 5px;">
+        Acompanhe os jogos que você já zerou. <br>  
+        Salve os que você quer jogar. <br>  
+        Compartilhe com seus amigos o que realmente vale a pena.
+    </p>
 </div>
 
-<div class="container-fluid mt-3">
-    <h3>Carousel Example</h3>
-    <p>The following example shows how to create a basic carousel with indicators and controls.</p>
+   <div class="bg-secondary p-4">
+    <h5 class="text-white text-center mb-3">Jogos populares essa semana</h5>
+    
+    <div class="carrossel-container">
+        <?php
+            include_once "carrossel.php";
+        ?>
+        </div>
+    </div>
+    </div>
+
+    <div class="bg-light">
+        <h5 class="text-black mx-4">Lista de jogos</h5><img src="imagens/estrela.png" width="20" height="20">
+
+
+    </div>
 </div>

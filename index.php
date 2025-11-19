@@ -1,7 +1,6 @@
 <?php
 
     include_once "topo.php";
-    include_once "menu.php";
 
     // Conteúdo
     if(empty($_SERVER["QUERY_STRING"])){
