@@ -1,8 +1,8 @@
 <?php
 
     include_once "topo.php";
-    include_once "menu.php";
 
+    // Conteúdo
     if(empty($_SERVER["QUERY_STRING"])){
         $var = "conteudo";
         include_once "$var.php";
