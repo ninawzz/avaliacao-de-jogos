@@ -19,7 +19,7 @@
     
     <div class="carrossel-container">
         <?php
-            include_once "carrossel.php";
+            include_once "componentes/carrossel.php";
         ?>
         </div>
     </div>

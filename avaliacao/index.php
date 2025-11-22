@@ -1,6 +1,6 @@
 <?php
 
-    include_once "topo.php";
+    include_once "componentes/topo.php";
 
     // Conteúdo
     if(empty($_SERVER["QUERY_STRING"])){
@@ -13,4 +13,4 @@
         echo "Página não encontrada";
     }
 
-    include_once "rodape.php";
+    include_once "componentes/rodape.php";
