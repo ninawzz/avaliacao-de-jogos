@@ -11,6 +11,14 @@
     transition: transform .2s ease, box-shadow .2s ease;
 }
 
+.card-image img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover; /* corta e preenche o espaço sem distorcer */
+    border-radius: 8px;
+}
+
+
 /* HOVER */
 .game-card:hover {
     transform: translateY(-6px);

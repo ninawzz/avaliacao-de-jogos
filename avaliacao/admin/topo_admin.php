@@ -11,21 +11,11 @@
 
 <nav class="navbar navbar-expand-sm bg-black navbar-dark">
     <div class="container-fluid">
-        <div class="text-center"><img src="imagens/logo.png" style="width:90px;"></div>
+        <div class="text-center"><img src="../imagens/logo.png" style="width:90px;"></div>
 
         <ul class="navbar-nav">
             <li class="nav-item mx-4">
-                <a class="nav-link active" href="?pg=conteudo">Início</a>
-            </li>
-            <li class="nav-item mx-4">
-                <a class="nav-link" href="?pg=jogos">Jogos</a>
-            </li>
-            <li class="nav-item mx-4">
-                <a class="nav-link" href="?pg=creditos">Quem Somos</a>
-            </li>
-            <a class="nav-link btn bg-info text-white mx-4 px-3 rounded-pill" href="?pg=avaliacao">
-            Avalie
-            </a>
-        </ul>
+                <a class="nav-link active" href="?pg=admin_jogos">Início</a>
+
     </div>
 </nav>
