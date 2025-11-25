@@ -16,9 +16,9 @@
     $resultado = mysqli_query($conexao, $sql);
 
     if($resultado){
-        echo "Avaliação alterada com sucesso!";
+        echo "<h2>Avaliação alterada com sucesso!</h2>";
         echo "<a href='index.php?pg=jogos'>Voltar</a>";
     }else{
-        echo "Houve um erro na alteração.";
+        echo "<h2>Houve um erro na alteração.</h2>";
         echo "<a href='index.php?pg=jogos'>Voltar</a>";
     }

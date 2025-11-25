@@ -1,12 +1,5 @@
 <?php
-    echo "Painel administrativo";
-?>
-
-<nav>
-    <a href="index.php">Inicio</a>
-    <a href="?pg=admin_jogos">Jogos</a>
-</nav>
-<?php
+    include_once"topo_admin.php";
 
     if(empty($_SERVER["QUERY_STRING"])){
        echo "<h3>Bem-vindo ao painel admin.";
@@ -16,4 +9,5 @@
     }else{
         echo "Página não encontrada";
     }
+    
 ?>

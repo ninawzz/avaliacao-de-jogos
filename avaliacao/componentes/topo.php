@@ -9,9 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-
-
-
 <nav class="navbar navbar-expand-sm bg-black navbar-dark">
     <div class="container-fluid">
         <div class="text-center"><img src="imagens/logo.png" style="width:90px;"></div>
@@ -26,10 +23,9 @@
             <li class="nav-item mx-4">
                 <a class="nav-link" href="?pg=creditos">Quem Somos</a>
             </li>
-            <a class="nav-link btn bg-info text-white mx-4 px-3 rounded-pill" href="?pg=avaliar">
+            <a class="nav-link btn bg-info text-white mx-4 px-3 rounded-pill" href="?pg=avaliacao">
             Avalie
             </a>
         </ul>
-
     </div>
 </nav>
