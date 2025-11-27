@@ -13,32 +13,24 @@
             <div class="col-md-6">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h2 class="card-title text-center mb-4">Cadastrar Jogo</h2>
-                        <form action="?pg=cadastrar_jogos" method="post" enctype="multipart/form-data">
+                        <h2 class="card-title text-center mb-4">Cadastrar Avaliação</h2>
+                        <form action="index.php?pg=cadastrar_avaliacao" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
-                                <label for="nome" class="form-label">Nome do jogo:</label>
+                                <label for="nome" class="form-label">Nome do Usuário:</label>
                                 <input type="text" class="form-control" id="nome" name="nome" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="genero" class="form-label">Gênero:</label>
-                                <input type="text" class="form-control" id="genero" name="genero" required>
                             </div>
                             <div class="mb-3">
                                 <label for="avaliacao" class="form-label">Avaliação:</label>
                                 <input type="number" class="form-control" id="avaliacao" name="avaliacao" max="5" value="0">
                             </div>
                             <div class="mb-3">
-                                <label for="descricao" class="form-label">Descrição:</label>
+                                <label for="descricao" class="form-label">Descrição da avaliação:</label>
                                 <input type="text" class="form-control" id="descricao" name="descricao" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="imagem" class="form-label">Imagem:</label>
-                                <input type="file" class="form-control" id="imagem" name="imagem" accept="image/*" required>
                             </div>
                             <button type="submit" class="btn btn-success w-100">Cadastrar</button>
                             <br>
                             <br>
-                            <a href='?pg=admin_jogos' class="btn btn-success w-100">Voltar</a>
+                            <a href='index.php?pg=jogos' class="btn btn-success w-100">Voltar</a>
                         </form>
                     </div>
                 </div>

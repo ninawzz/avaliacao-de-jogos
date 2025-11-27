@@ -13,21 +13,3 @@
         Compartilhe com seus amigos o que realmente vale a pena.
     </p>
 </div>
-
-   <div class="bg-secondary p-4">
-    <h5 class="text-white text-center mb-3">Jogos populares essa semana</h5>
-    
-    <div class="carrossel-container">
-        <?php
-            include_once "componentes/carrossel.php";
-        ?>
-        </div>
-    </div>
-    </div>
-
-    <div class="bg-light">
-        <h5 class="text-black mx-4">Lista de jogos</h5><img src="imagens/estrela.png" width="20" height="20">
-
-
-    </div>
-</div>

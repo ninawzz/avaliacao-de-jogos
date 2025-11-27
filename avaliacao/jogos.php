@@ -18,6 +18,10 @@
     <h2 class="titulo-jogos">
         Jogos para Avaliação
     </h2>
+    <br>
+        <a class="btn btn-sm btn-secondary" href="suasavaliacoes.php">Ver a suas avaliações</a>
+    <br>
+    <br>
 </div>
    
 <?php

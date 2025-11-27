@@ -46,7 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $execute = mysqli_query($conexao, $sql);
 
         if ($execute) {
-            $mensagem = "Jogo cadastrado com sucesso!";
+            echo "<h2>Jogo cadastrado com sucesso!</h2>";
+            echo "<a href='index.php?pg=admin_jogos'>Voltar</a>";
         } else {
             $erro = true;
             $mensagem = "Erro ao cadastrar: " . mysqli_error($conexao);

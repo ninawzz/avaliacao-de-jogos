@@ -27,7 +27,6 @@ $resultado = mysqli_query($conexao, $sql);
                     <th>Nome</th>
                     <th>Gênero</th>
                     <th>Avaliação</th>
-                    <th>Descrição</th>
                     <th style="width: 220px;">Ações</th>
                 </tr>
             </thead>
@@ -46,10 +45,9 @@ $resultado = mysqli_query($conexao, $sql);
                     <td><?= $dados['nome'] ?></td>
                     <td><?= $dados['genero'] ?></td>
                     <td><?= $dados['avaliacao'] ?></td>
-                    <td><?= $dados['descricao'] ?></td>
 
                     <td>
-                        <a href="?pg=ver_jogo&id=<?= $dados['id'] ?>" 
+                        <a href="?pg=detalhes_jogos&id=<?= $dados['id'] ?>" 
                            class="btn btn-primary btn-sm mx-1">
                            Ver
                         </a>

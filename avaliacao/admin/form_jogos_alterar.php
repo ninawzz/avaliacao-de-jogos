@@ -55,7 +55,10 @@
                                 <?php endif; ?>
                                 <input type="file" class="form-control" id="imagem" name="imagem" accept="image/*">
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Alterar</button>
+                            <button type="submit" class="btn btn-warning w-100">Alterar</button>
+                            <br>
+                            <br>
+                            <a href='?pg=admin_jogos' class="btn btn-warning w-100">Voltar</a>
                         </form>
                     </div>
                 </div>
