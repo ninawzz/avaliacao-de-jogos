@@ -16,6 +16,8 @@
         <ul class="navbar-nav">
             <li class="nav-item mx-4">
                 <a class="nav-link active" href="?pg=admin_jogos">Início</a>
+            <li class="nav-item mx-4">
+                <a class="nav-link active" href="?pg=sugestoes_jogos">Sugestões</a>
 
     </div>
 </nav>

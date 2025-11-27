@@ -36,6 +36,9 @@
                                 <input type="file" class="form-control" id="imagem" name="imagem" accept="image/*" required>
                             </div>
                             <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+                            <br>
+                            <br>
+                            <a href='?pg=admin_jogos' class="btn btn-success w-100">Voltar</a>
                         </form>
                     </div>
                 </div>

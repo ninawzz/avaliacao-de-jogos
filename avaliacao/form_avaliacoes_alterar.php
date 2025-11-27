@@ -37,10 +37,13 @@
                                 <input type="number" class="form-control" id="avaliacao" name="avaliacao" value="<?=$avaliacao?>" min="0" max="5" step="0.1" required>
                             </div>
                             <div class="mb-3">
-                                <label for="descricao" class="form-label">Descrição:</label>
+                                <label for="descricao" class="form-label">Descrição da avaliação:</label>
                                 <input type="text" class="form-control" id="descricao" name="descricao" value="<?=$descricao?>" required>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Alterar</button>
+                            <button type="submit" class="btn btn-warning w-100">Alterar</button>
+                            <br>
+                            <br>
+                            <a href='?pg=suasavaliacoes' class="btn btn-warning w-100">Voltar</a>
                         </form>
                     </div>
                 </div>

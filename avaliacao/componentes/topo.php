@@ -15,15 +15,15 @@
 
         <ul class="navbar-nav">
             <li class="nav-item mx-4">
-                <a class="nav-link active" href="?pg=conteudo">Início</a>
+                <a class="nav-link active" href="index.php?pg=conteudo">Início</a>
             </li>
             <li class="nav-item mx-4">
-                <a class="nav-link" href="?pg=jogos">Jogos</a>
+                <a class="nav-link" href="index.php?pg=jogos">Jogos</a>
             </li>
             <li class="nav-item mx-4">
-                <a class="nav-link" href="?pg=creditos">Quem Somos</a>
+                <a class="nav-link" href="index.php?pg=creditos">Quem Somos</a>
             </li>
-            <a class="nav-link btn bg-info text-white mx-4 px-3 rounded-pill" href="?pg=avaliacao">
+            <a class="nav-link btn bg-info text-white mx-4 px-3 rounded-pill" href="index.php?pg=avaliacao">
             Avalie
             </a>
         </ul>

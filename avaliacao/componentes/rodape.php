@@ -22,10 +22,10 @@
         <h5 class="fw-semibold">Links Rápidos</h5>
         <ul class="list-unstyled small mt-3">
           <li class="mb-2">
-            <a href="?pg=conteudo" class="text-muted text-decoration-none hover-link">Início</a>
+            <a href="index.php?pg=conteudo" class="text-muted text-decoration-none hover-link">Início</a>
           </li>
           <li class="mb-2">
-            <a href="?pg=jogos" class="text-muted text-decoration-none hover-link">Jogos</a>
+            <a href="index.php?pg=jogos" class="text-muted text-decoration-none hover-link">Jogos</a>
           </li>
         </ul>
       </div>
