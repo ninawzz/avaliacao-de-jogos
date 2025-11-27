@@ -2,6 +2,7 @@
 
     include_once "componentes/topo.php";
 
+    // Conteúdo
     if(empty($_SERVER["QUERY_STRING"])){
         $var = "conteudo";
         include_once "$var.php";
