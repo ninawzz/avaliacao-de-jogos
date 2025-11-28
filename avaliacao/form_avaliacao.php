@@ -1,3 +1,4 @@
+<?php $jogo_id = $_GET['jogo_id']; ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -15,6 +16,7 @@
                     <div class="card-body">
                         <h2 class="card-title text-center mb-4">Cadastrar Avaliação</h2>
                         <form action="index.php?pg=cadastrar_avaliacao" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="jogo_id" value="<?= $jogo_id ?>">
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome do Usuário:</label>
                                 <input type="text" class="form-control" id="nome" name="nome" required>
