@@ -23,8 +23,11 @@
             <li class="nav-item mx-4">
                 <a class="nav-link" href="index.php?pg=creditos">Quem Somos</a>
             </li>
+            <li class="nav-item mx-4">
+                <a class="nav-link" href="index.php?pg=form_sugestao">Sugestões</a>
+            </li>
             <a class="nav-link btn bg-info text-white mx-4 px-3 rounded-pill" href="index.php?pg=avaliacao">
-            Avalie
+            Cadastro/Login
             </a>
         </ul>
     </div>

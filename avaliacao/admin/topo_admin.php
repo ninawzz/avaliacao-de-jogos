@@ -17,7 +17,9 @@
             <li class="nav-item mx-4">
                 <a class="nav-link active" href="?pg=admin_jogos">Início</a>
             <li class="nav-item mx-4">
-                <a class="nav-link active" href="?pg=sugestoes_jogos">Sugestões</a>
+                <a class="nav-link active" href="?pg=sugestao_usuario">Sugestões</a>
+            <li class="nav-item mx-4">
+                <a class="nav-link active" href="?pg=avaliacao_usuarios">Avaliações</a>
 
     </div>
 </nav>

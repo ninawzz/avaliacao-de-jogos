@@ -1,16 +1,13 @@
 <?php
-require_once "admin/config.inc.php";
+require_once "config.inc.php";
 
-
-$id = $_GET['id'];
-
-if (!$id) {
-    echo "ID inválido";
+if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+    echo "ID inválido.";
     exit;
 }
+$id = (int) $_GET['id'];
 
-
-$stmt = mysqli_prepare($conexao, "SELECT id, jogo_id, nome, avaliacao, descricao FROM avaliacoes WHERE id = ?");
+$stmt = mysqli_prepare($conexao, "SELECT id, nome, genero, descricao, imagem FROM sugestoes WHERE id = ?");
 mysqli_stmt_bind_param($stmt, "i", $id);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
@@ -22,6 +19,7 @@ if (!$result || mysqli_num_rows($result) === 0) {
 
 $row = mysqli_fetch_assoc($result);
 
+$imgUrl = "../imagem_jogos/" . ($row['imagem'] ?? "");
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -48,9 +46,19 @@ $row = mysqli_fetch_assoc($result);
     <div class="card">
         <h1>Detalhes do Jogo</h1>
         <div class="top">
+            <div class="img-box">
+                <?php if (!empty($row['imagem']) && file_exists(__DIR__ . "/../imagem_jogos/" . $row['imagem'])): ?>
+                    <img src="<?= htmlspecialchars($imgUrl) ?>" alt="<?= htmlspecialchars($row['nome']) ?>">
+                <?php else: ?>
+                    <div style="width:100%;height:200px;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;color:#888;">
+                        sem imagem
+                    </div>
+                <?php endif; ?>
+            </div>
+
             <div class="info">
                 <div class="field"><span class="label">Nome:</span> <?= htmlspecialchars($row['nome']) ?></div>
-                <div class="field"><span class="label">Avaliação:</span> <?= htmlspecialchars($row['avaliacao']) ?></div>
+                <div class="field"><span class="label">Gênero:</span> <?= htmlspecialchars($row['genero']) ?></div>
 
                 <div class="desc">
                     <div class="label">Descrição:</div>
@@ -70,7 +78,7 @@ $row = mysqli_fetch_assoc($result);
             </div>
         </div>
         <br>
-        <p><a href='?pg=jogos' class="btn btn-primary w-100">Voltar</a></p>
+        <p><a href='?pg=sugestao_usuario' class="btn btn-primary w-100">Voltar</a></p>
     </div>
 </div>
 </body>

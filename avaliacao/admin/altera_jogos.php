@@ -14,7 +14,7 @@
         move_uploaded_file($tmp, "../imagem_jogos/" . $imagem);
     } else {
         $imagem = $_POST['imagem_atual']; // mantém a existente
-}
+    }
 
     $sql = "UPDATE jogos SET
             nome = '$nome',
@@ -27,9 +27,9 @@
     $resultado = mysqli_query($conexao, $sql);
 
     if($resultado){
-        echo "Cadastro Alterado com sucesso!";
-        echo "<a href='?pg=admin_jogos'>Voltar</a>";
+        echo "<h2>Jogo cadastrado com sucesso!</h2>";
+        echo "<a href='index.php?pg=admin_jogos'>Voltar</a>";
     }else{
-        echo "Houve um erro na alteração.";
-        echo "<a href='?pg=admin_jogos'>Voltar</a>";
+        echo "<h2>Houve um erro na alteração.</h2>";
+        echo "<a href='index.php?pg=admin_jogos'>Voltar</a>";
     }

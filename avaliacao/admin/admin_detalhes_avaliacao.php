@@ -1,5 +1,5 @@
 <?php
-require_once "admin/config.inc.php";
+require_once "config.inc.php";
 
 
 $id = $_GET['id'];
@@ -70,7 +70,7 @@ $row = mysqli_fetch_assoc($result);
             </div>
         </div>
         <br>
-        <p><a href='?pg=jogos' class="btn btn-primary w-100">Voltar</a></p>
+        <p><a href='?pg=avaliacao_usuarios' class="btn btn-primary w-100">Voltar</a></p>
     </div>
 </div>
 </body>

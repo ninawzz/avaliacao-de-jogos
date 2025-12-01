@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/componentes/topo.php';
+require_once __DIR__ . '/topo_admin.php';
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -7,7 +7,7 @@ require_once __DIR__ . '/componentes/topo.php';
 <h2 class="text-center my-4">Lista de Avaliações</h2>
 
 <?php
-    require_once __DIR__ . '/admin/config.inc.php';
+    require_once __DIR__ . '/config.inc.php';
 
     $sql = "SELECT * FROM avaliacoes";
     $resultado = mysqli_query($conexao, $sql);
@@ -35,7 +35,7 @@ require_once __DIR__ . '/componentes/topo.php';
                     <td><?= $dados['id'] ?></td>
 
                     <td>
-                        <img src="imagem_jogos/<?= $dados1['imagem'] ?>" 
+                        <img src="../imagem_jogos/<?= $dados1['imagem'] ?>" 
                                 width="90" height="90" 
                                 style="object-fit:cover; border-radius:8px;">
                     </td>
@@ -44,17 +44,11 @@ require_once __DIR__ . '/componentes/topo.php';
                     <td><?= $dados['avaliacao'] ?></td>
 
                     <td>
-                        <a href="index.php?pg=detalhes_avaliacao&id=<?= $dados['id'] ?>" 
+                        <a href="index.php?pg=admin_detalhes_avaliacao&id=<?= $dados['id'] ?>" 
                             class="btn btn-primary btn-sm mx-1">
                             Ver
                         </a>
-
-                        <a href="index.php?pg=form_avaliacoes_alterar&id=<?= $dados['id'] ?>" 
-                            class="btn btn-warning btn-sm mx-1">
-                            Alterar
-                        </a>
-
-                        <a href="index.php?pg=delete_avaliacao&id=<?= $dados['id'] ?>"
+                        <a href="index.php?pg=../delete_avaliacao&id=<?= $dados['id'] ?>"
                             class="btn btn-danger btn-sm mx-1"
                             onclick="return confirm('Tem certeza que deseja excluir essa avaliação?')">
                             Excluir
@@ -66,6 +60,3 @@ require_once __DIR__ . '/componentes/topo.php';
         </table>
     </div>
 </div>
-<?php
-require_once __DIR__ . '/componentes/rodape.php';
-?>
