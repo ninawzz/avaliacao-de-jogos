@@ -1,11 +1,14 @@
 <?php
 require_once "admin/config.inc.php";
 
-if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    echo "ID inválido.";
+
+$id = $_GET['jogo_id'];
+
+if (!$id) {
+    echo "ID inválido";
     exit;
 }
-$id = (int) $_GET['id'];
+
 
 $stmt = mysqli_prepare($conexao, "SELECT id, nome, genero, avaliacao, descricao, imagem FROM jogos WHERE id = ?");
 mysqli_stmt_bind_param($stmt, "i", $id);
