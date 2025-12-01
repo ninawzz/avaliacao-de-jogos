@@ -7,7 +7,14 @@
     $genero = $_POST['genero'];
     $avaliacao = $_POST['avaliacao'];
     $descricao= $_POST['descricao'];
-    $imagem = $_POST['imagem'];
+    
+    if (!empty($_FILES['imagem']['name'])) {
+        $imagem = $_FILES['imagem']['name'];
+        $tmp = $_FILES['imagem']['tmp_name'];
+        move_uploaded_file($tmp, "../imagem_jogos/" . $imagem);
+    } else {
+        $imagem = $_POST['imagem_atual']; // mantém a existente
+}
 
     $sql = "UPDATE jogos SET
             nome = '$nome',
