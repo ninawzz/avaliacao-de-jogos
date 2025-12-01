@@ -14,8 +14,9 @@
                     <p><strong>Gênero:</strong> <?=$jogos['genero']?></p>
                     <div class="stars" data-rating="<?=$jogos['avaliacao']?>"></div>
                     <div class="actions">
-                        <a class="btn btn-sm btn-primary" href="form_avaliacao.php">Avaliar</a>
-                        <a class="btn btn-sm btn-primary" href="detalhes_jogo_avaliacao.php">Ver Descrição</a>
+                        <a class="btn btn-sm btn-primary" href="index.php?pg=form_avaliacao&jogo_id=<?= $jogos['id'] ?>">Avaliar</a>
+                        <a class="btn btn-sm btn-primary" href="index.php?pg=detalhes_jogo_avaliacao&jogo_id=<?= $jogos['id'] ?>">Ver Detalhes</a>
+
                     </div>
                 </div>
             </div>
