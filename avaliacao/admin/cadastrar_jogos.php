@@ -46,11 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $execute = mysqli_query($conexao, $sql);
 
         if ($execute) {
-            echo "<h2>Jogo cadastrado com sucesso!</h2>";
-            echo "<a href='index.php?pg=admin_jogos'>Voltar</a>";
+            echo '<div class="container"><h2 class="text-center my-4">Jogo cadastrado com sucesso!</h2></div>';
+            echo '<div class="text-center"><a href="index.php?pg=admin_jogos" class="btn btn-success">Voltar</a></div>';
         } else {
-            $erro = true;
-            $mensagem = "Erro ao cadastrar: " . mysqli_error($conexao);
+            echo '<div class="container"><h2 class="text-center my-4">Erro ao cadastradar jogo!</h2></div>';
+            echo '<div class="text-center"><a href="index.php?pg=admin_jogos" class="btn btn-success">Voltar</a></div>';
         }
     }
 }

@@ -23,8 +23,13 @@
          $sql_update = "UPDATE jogos SET avaliacao = '$media' WHERE id = '$jogo_id'";
     mysqli_query($conexao, $sql_update);
 
-        echo "<h2>Avaliação cadastrada com sucesso!</h2>";
-        echo "<a href='index.php?pg=jogos'>Voltar</a>";
+        echo '<div class="container"><h2 class="text-center my-4">Avaliação cadastrada com sucesso!</h2></div>';
+        echo '<div class="text-center"><a href="index.php?pg=jogos" class="btn btn-success">Voltar</a></div>';
+        echo '<br>';
+        echo '<br>';
     }else{
-        echo "<h2>Houve um erro ao cadastrar a avaliação!</h2><br>";
+        echo '<div class="container"><h2 class="text-center my-4">Erro ao cadastradar avaliação!</h2></div>';
+        echo '<div class="text-center"><a href="index.php?pg=jogos" class="btn btn-success">Voltar</a></div>';
+        echo '<br>';
+        echo '<br>';
     }

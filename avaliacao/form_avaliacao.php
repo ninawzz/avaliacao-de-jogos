@@ -39,6 +39,8 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
 
     <!-- Bootstrap JS (opcional, apenas para componentes interativos, mas não usado aqui) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

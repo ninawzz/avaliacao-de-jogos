@@ -32,15 +32,14 @@
                                 <input type="file" class="form-control" id="imagem" name="imagem" accept="image/*" required>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
-                            <br>
-                            <br>
-                            <a href='?pg=admin_jogos' class="btn btn-primary w-100">Voltar</a>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <br>
+    <br>
 
     <!-- Bootstrap JS (opcional, apenas para componentes interativos, mas não usado aqui) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

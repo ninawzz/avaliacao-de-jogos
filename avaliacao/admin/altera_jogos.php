@@ -27,9 +27,13 @@
     $resultado = mysqli_query($conexao, $sql);
 
     if($resultado){
-        echo "<h2>Jogo cadastrado com sucesso!</h2>";
-        echo "<a href='index.php?pg=admin_jogos'>Voltar</a>";
+        echo '<div class="container"><h2 class="text-center my-4">Jogo alterado com sucesso!</h2></div>';
+        echo '<div class="text-center"><a href="index.php?pg=admin_jogos" class="btn btn-warning">Voltar</a></div>';
+        echo '<br>';
+        echo '<br>';
     }else{
-        echo "<h2>Houve um erro na alteração.</h2>";
-        echo "<a href='index.php?pg=admin_jogos'>Voltar</a>";
+        echo '<div class="container"><h2 class="text-center my-4">Erro ao alterar jogo!</h2></div>';
+        echo '<div class="text-center"><a href="index.php?pg=admin_jogos" class="btn btn-warning">Voltar</a></div>';
+        echo '<br>';
+        echo '<br>';
     }
