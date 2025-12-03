@@ -1,5 +1,7 @@
 <?php
+
     require_once "admin/config.inc.php";
+    
     $id = $_REQUEST['id'];
     $sql = "SELECT * FROM avaliacoes WHERE id = $id";
     $resultado = mysqli_query($conexao, $sql);

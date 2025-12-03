@@ -46,12 +46,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($execute) {
             echo '<div class="container"><h2 class="text-center my-4">Sugestão cadastrada com sucesso!</h2></div>';
-            echo '<div class="text-center"><a href="index.php?pg=jogos" class="btn btn-primary">Voltar</a></div>';
+            echo '<div class="text-center"><a href="index.php?pg=jogos" class="btn btn-secondary">Voltar</a></div>';
             echo '<br>';
             echo '<br>';
         } else {
             echo '<div class="container"><h2 class="text-center my-4">Erro ao cadastradar sugestão!</h2></div>';
-            echo '<div class="text-center"><a href="index.php?pg=jogos" class="btn btn-primary">Voltar</a></div>';
+            echo '<div class="text-center"><a href="index.php?pg=jogos" class="btn btn-secondary">Voltar</a></div>';
             echo '<br>';
             echo '<br>';
         }

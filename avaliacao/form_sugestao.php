@@ -31,7 +31,7 @@
                                 <label for="imagem" class="form-label">Imagem:</label>
                                 <input type="file" class="form-control" id="imagem" name="imagem" accept="image/*" required>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+                            <button type="submit" class="btn btn-secondary w-100">Cadastrar</button>
                         </form>
                     </div>
                 </div>

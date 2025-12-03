@@ -31,8 +31,8 @@ if (!$usuario) {
         <tr><th>Criado em</th><td><?php echo ($usuario['criado_em']); ?></td></tr>
     </table>
 
-    <a href="index.php?pg=usuario_altera" class="btn btn-secondary">Editar conta</a>
-    <a href="index.php?pg=usuario_delete" class="btn btn-secondary">Excluir conta</a>
+    <a href="index.php?pg=usuario_form_altera&id=<?= $usuario['id'] ?>" class="btn btn-secondary">Editar conta</a>
+    <a href="index.php?pg=usuario_delete&id=<?= $usuario['id'] ?>" class="btn btn-secondary">Excluir conta</a>
     <br>
     <br>
 </div>
