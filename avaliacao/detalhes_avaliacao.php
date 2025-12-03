@@ -74,7 +74,7 @@ $row = mysqli_fetch_assoc($result);
             </div>
         </div>
         <br>
-        <p><a href='?pg=jogos' class="btn btn-primary w-100">Voltar</a></p>
+        <p><a href='?pg=suasavaliacoes' class="btn btn-primary w-100">Voltar</a></p>
     </div>
 </div>
 </body>

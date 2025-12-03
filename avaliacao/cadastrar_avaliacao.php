@@ -24,12 +24,12 @@
     mysqli_query($conexao, $sql_update);
 
         echo '<div class="container"><h2 class="text-center my-4">Avaliação cadastrada com sucesso!</h2></div>';
-        echo '<div class="text-center"><a href="index.php?pg=jogos" class="btn btn-success">Voltar</a></div>';
+        echo '<div class="text-center"><a href="index.php?pg=jogos" class="btn btn-secondary">Voltar</a></div>';
         echo '<br>';
         echo '<br>';
     }else{
         echo '<div class="container"><h2 class="text-center my-4">Erro ao cadastradar avaliação!</h2></div>';
-        echo '<div class="text-center"><a href="index.php?pg=jogos" class="btn btn-success">Voltar</a></div>';
+        echo '<div class="text-center"><a href="index.php?pg=jogos" class="btn btn-secondary">Voltar</a></div>';
         echo '<br>';
         echo '<br>';
     }

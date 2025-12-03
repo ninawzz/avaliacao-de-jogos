@@ -10,7 +10,7 @@ $sql = "SELECT * FROM jogos";
 $resultado = mysqli_query($conexao, $sql);
 
 if (!$resultado || mysqli_num_rows($resultado) === 0) {
-    echo '<div class="container"><h3 class="text-center my-4">Nenhuma jogo cadastrado!</h3></div>';
+    echo '<div class="container"><h3 class="text-center my-4">Nenhum jogo cadastrado!</h3></div>';
     echo '<div class="text-center"><a href="?pg=form_jogos" class="btn btn-success">Cadastrar Jogo</a></div>';
 } else {
     ?>
