@@ -1,0 +1,148 @@
+:root {
+    --grad-base: linear-gradient(
+        to bottom,
+        #000000,
+        #001a33,
+        #4da6ff
+    );
+    --transition-fast: .25s ease;
+    --transition-slow: .6s ease;
+}
+
+body {
+    margin: 0;
+    background: #000 ;   
+    min-height: 100vh;
+    color: #000000;
+}
+
+.game-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 380px; 
+    cursor: pointer;
+    background: #000;
+    border: none;
+    box-shadow: 0 10px 30px rgba(14, 2, 68, 0.38);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.game-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+}
+
+
+.card-image {
+    width: 100%;
+    height: 300px; 
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.game-card:hover .card-image img {
+    transform: scale(1.15);
+}
+
+
+.game-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--grad-base);
+    opacity: 0.70;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+}
+
+.game-card:hover::before {
+    opacity: 0.9;
+}
+
+
+.card-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #000000;
+
+    backdrop-filter: blur(9px);
+    background: rgba(0, 0, 0, 0.25);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+.card-body h5,
+.card-body p,
+.card-body strong {
+    color: #ffffff !important; 
+}
+
+
+.card-body h5 {
+    margin: 0;
+    font-size: 1.2rem; 
+    font-weight: 700;
+}
+
+
+.card-body p {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 1;
+}
+
+
+.actions {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    gap: 12px;                 
+    width: 100%;
+}
+
+
+.actions a {
+    padding: 8px 16px;
+    border-radius: 20px !important;
+    font-weight: 600;
+    color: #ffffff !important;
+
+    background: linear-gradient(to right, #000000, #173c47, #3b86b8);
+    border: none !important;
+
+
+    transition: transform .25s ease, opacity .25s ease, box-shadow .25s ease;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+
+.actions a:hover {
+    transform: translateY(-3px) scale(1.08);
+    opacity: 3;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.55);
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 20px !important;
+    font-weight: 600;
+    color: #ffffff !important;
+    background: linear-gradient(to right, #000000, #173c47, #3b86b8);
+}

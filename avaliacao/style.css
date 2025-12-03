@@ -1,88 +1,18 @@
-/* CARD BASE */
-.game-card {
-    border: 2px solid #222;
-    background: linear-gradient(to bottom, #ffffff, #e6f3ff); /* branco → azul claro */
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.card-image img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover; /* corta e preenche o espaço sem distorcer */
-    border-radius: 8px;
-}
-
-
-/* HOVER */
-.game-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-}
-
-/* IMAGEM */
-.game-card .card-image {
-    background: #fafafa;
-    display: grid;
-    place-items: center;
-    min-height: 130px;
-    color: #555;
-    font-size: 0.95rem;
-    border-bottom: 1px solid #e5e5e5;
-    border-radius: 14px 14px 0 0;
-}
-
-/* CONTEÚDO */
-.game-card .card-body {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex: 1 1 auto;
-}
-
-/* TÍTULO */
-.game-card h5 {
+body {
     margin: 0;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #003366;
+    background: #0000;   
+    color: #000000;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* TEXTOS */
-.game-card p {
-    margin: 0;
-    color: #444;
-    font-size: 0.95rem;
+.bg-black {
+    background: transparent ;
+    text-align: center;
+    position: relative;
 }
 
-/* AÇÕES */
-.game-card .actions {
-    margin-top: auto;
-    display: flex;
-    gap: 8px;
-}
-
-.game-card .actions a {
-    border-radius: 20px !important;
-    padding: 6px 12px;
-    font-weight: 600;
-    color: #fff !important;
-    background: linear-gradient(to right, #003b7a, #4da6ff) !important;
-    border: none !important;
-}
-
-.game-card .actions a:hover {
-    opacity: 0.9;
-    transform: scale(1.02);
-}
-
-/* ESTRELAS */
+/* estrelinha */
 .stars {
     display: inline-block;
     margin-top: 4px;
@@ -97,9 +27,45 @@
     color: gold;
 }
 
-/* Container */
-.bg-black {
-    background: #000;
-    text-align: center;
-    position: relative;
+.navbar .nav-link {
+    color: rgb(255, 255, 255) !important;  
+}
+
+.navbar .nav-link.active {
+    color: rgb(255, 255, 255) !important;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: #ffffff;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-color: #4da6ff;
+    box-shadow: none;
+}
+
+label {
+    color: #ffffff;
+}
+
+h2.card-title {
+    color: #ffffff;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 20px !important;
+    font-weight: 600;
+    color: #ffffff !important;
+    background: linear-gradient(to right, #000000, #173c47, #3b86b8);
 }

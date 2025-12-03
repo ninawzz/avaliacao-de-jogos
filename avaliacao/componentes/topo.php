@@ -1,4 +1,4 @@
-<?php $nome = "Game Boxe"; ?>
+<?php $nome = "Game Boxe"; ?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,26 +9,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<nav class="navbar navbar-expand-sm bg-black navbar-dark">
-    <div class="container-fluid">
-        <div class="text-center"><img src="imagens/logo.png" style="width:90px;"></div>
 
+<nav class="navbar navbar-expand-sm" style="background-image: url('imagens/nav.png'); background-size: cover; background-position: center;">
+    <div class="container-fluid">
+        <a href="index.php?pg=conteudo">
+            <img src="imagens/logo.png" style="width:90px;">
+        </a>
         <ul class="navbar-nav">
             <li class="nav-item mx-4">
-                <a class="nav-link active" href="index.php?pg=conteudo">Início</a>
+                <a class="nav-link active text-white" href="index.php?pg=conteudo">Início</a>
             </li>
             <li class="nav-item mx-4">
-                <a class="nav-link" href="index.php?pg=jogos">Jogos</a>
+                <a class="nav-link text-white" href="index.php?pg=jogos">Jogos</a>
             </li>
             <li class="nav-item mx-4">
-                <a class="nav-link" href="index.php?pg=creditos">Quem Somos</a>
+                <a class="nav-link text-white" href="index.php?pg=creditos">Quem Somos</a>
             </li>
             <li class="nav-item mx-4">
                 <a class="nav-link" href="index.php?pg=form_sugestao">Sugestões</a>
             </li>
             <a class="nav-link btn bg-info text-white mx-4 px-3 rounded-pill" href="index.php?pg=avaliacao">
-            Cadastro/Login
+                Login
             </a>
         </ul>
     </div>
 </nav>
+
+</html>
