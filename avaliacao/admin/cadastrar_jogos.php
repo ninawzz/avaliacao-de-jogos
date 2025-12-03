@@ -1,4 +1,5 @@
 <?php
+
 require_once "config.inc.php";
 
 $pasta = __DIR__ . "/../imagem_jogos/";

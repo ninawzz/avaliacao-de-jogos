@@ -10,6 +10,23 @@
     <meta charset="utf-8">
     <title>Lista de Jogos</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+    .btn {
+    padding: 10px 18px;
+    border-radius: 20px !important;
+    font-weight: 700;
+    color: #ffffff !important;
+    background: linear-gradient(to right, #000, #173c47, #3b86b8);
+    transition: .4s ease-in-out;
+    border: none;
+}
+
+    .btn:hover {
+        background: linear-gradient(90deg, #a8d0fcff, #185366);
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+    }
+    </style>
 </head>
 <body>
 

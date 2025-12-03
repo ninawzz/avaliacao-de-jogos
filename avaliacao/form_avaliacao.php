@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/jogos/avaliacao-de-jogos/avaliacao/style.css">
-
     <style>
         body {
-            background: linear-gradient(to bottom, #000000, #001a33, #4da6ff);
+            background: linear-gradient(to bottom, #6fb5e4ff, #0c5eaaff, #000000ff);
             color: #ffffff; 
             min-height: 100vh;
         }
@@ -16,13 +15,15 @@
 </head>
 
 <body>
-<div class="container" style="margin-top: 250px; margin-bottom: 200px;">
+
+<div class="container" style="margin-top: 200px; margin-bottom: 200px;">
+    
         <a href="index.php?pg=jogos">
-            <h1 style="margin-left:400px; margin-top:-30px; position:absolute; text-align:center; margin-bottom:15px; font-size:26px; color:#fff;">
+            <h1 style="margin-left:400px; margin-top:12px; position:absolute; text-align:center; margin-bottom:20px; font-size:20px; color:#fff;">
         Voltar
             </h1>
         </a>
-        <a href="index.php?pg=jogos"><img src="imagens/arco.png" style="width:40px; margin-left:345px; margin-top:-34px; position:absolute;"></a> 
+        <a href="index.php?pg=jogos"><img src="imagens/arco.png" style="width:40px; margin-left:355px; margin-top:5px; position:absolute;"></a> 
 
         <div class="row justify-content-center p-5" style="margin-top:100px;">
         <div class="col-md-6">
@@ -31,21 +32,19 @@
                     <h2 class="card-title text-center mb-4">Cadastrar Avaliação</h2>
                     <form action="index.php?pg=cadastrar_avaliacao" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="jogo_id" value="<?= $jogo_id ?>">
-                        <div class="mb-3">
-                            <label for="nome" class="form-label">Nome do Usuário:</label>
-                            <input type="text" class="form-control" id="nome" name="nome" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="avaliacao" class="form-label">Avaliação:</label>
-                            <input type="number" class="form-control" id="avaliacao" name="avaliacao" max="5" value="0">
-                        </div>
-                        <div class="mb-3">
-                            <label for="descricao" class="form-label">Descrição da avaliação:</label>
-                            <input type="text" class="form-control" id="descricao" name="descricao" required>
-                        </div>
-                        <button type="submit" class="btn w-100">Cadastrar</button>
-                        <br><br>
-                    </form>
+                            <div class="mb-3">
+                                <label for="avaliacao" class="form-label">Avaliação:</label>
+                                <input type="number" class="form-control" id="avaliacao" name="avaliacao" max="5" value="0">
+                            </div>
+                            <div class="mb-3">
+                                <label for="descricao" class="form-label">Descrição da avaliação:</label>
+                                <input type="text" class="form-control" id="descricao" name="descricao" required>
+                            </div>
+                            <button type="submit" class="btn text-white w-100">Cadastrar</button>
+                            <br>
+                            <br>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -24,19 +24,18 @@ $imgUrl = "imagem_jogos/" . ($row['imagem'] ?? "");
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/jogos/avaliacao-de-jogos/avaliacao/style.css">
     <style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.container {
+        body {
+            background: linear-gradient(to bottom, #000000, #001a33, #4da6ff);
+            min-height: 100vh;
+        }
+    .container {
     max-width: 1200px;
     margin: 1px 2px 3px auto;
-    padding: 85px;
+    padding: 30px;
     border-radius: 22px;
     background: rgba(0, 0, 0, 0.55);
     color: #fff;
@@ -114,26 +113,22 @@ body {
         max-width: 90%;
     }
 }
-</style>
+
+    </style>
 </head>
+
 <body>
-
 <div class="detalhe">
-    <img src="imagens/detalhe.png" alt="">
-    
-    <div class="container">
-
-        <a href="index.php?pg=jogos">
-            <img src="imagens/arco.png" style="width:40px; margin-left:-170px; margin-top:-203px; position:absolute;">
+            <a href="index.php?pg=jogos">
+            <img src="imagens/arco.png" style="width:40px; margin-left:290px; margin-top:55px; position:absolute;">
         </a> 
-
         <a href="index.php?pg=jogos">
-            <h1 style="margin-left:-110px; margin-top:-200px; position:absolute; text-align:center; margin-bottom:15px; font-size:26px; color:#fff;">
+            <h1 style="margin-left:339px; margin-top:58px; position:absolute; text-align:center; margin-bottom:15px; font-size:26px; color:#fff;">
                 Detalhes do Jogo
             </h1>
         </a>
-
-
+    <img src="imagens/detalhe.png" alt="">
+    <div class="container">
         <div class="top">
             <div class="img-box">
                 <?php if (!empty($row['imagem']) && file_exists(__DIR__ . "/imagem_jogos/" . $row['imagem'])): ?>
