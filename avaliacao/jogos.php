@@ -15,19 +15,16 @@
 
 
 <div class="bg-black text-white text-center position-relative">
-    <h2 class="titulo-jogos">
-        Jogos para Avaliação
-    </h2>
-    <br>
-        <a class="btn btn-sm btn-secondary" href="suasavaliacoes.php">Ver a suas avaliações</a>
+    <div class="text-center"><img src="imagens/titulodeavaliacao.png" style="max-width:70%; height:auto;"></div>
+    <br><a class="btn btn-sm btn-secondary" href="suasavaliacoes.php">Ver a suas avaliações</a>
     <br>
     <br>
+    <?php
+    require_once "componentes/card.php";
+    require_once "componentes/estrela.php";
+    ?>
 </div>
    
-<?php
-require_once "componentes/card.php";
-require_once "componentes/estrela.php";
-?>
 
 </body>
 </html>
