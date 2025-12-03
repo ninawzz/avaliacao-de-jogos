@@ -10,7 +10,11 @@ if (!$id) {
 }
 
 
-$stmt = mysqli_prepare($conexao, "SELECT id, jogo_id, nome, avaliacao, descricao FROM avaliacoes WHERE id = ?");
+$stmt = $stmt = mysqli_prepare($conexao, 
+    "SELECT a.avaliacao, a.descricao, u.nome AS usuario_nome
+     FROM avaliacoes a
+     LEFT JOIN usuarios u ON u.id = a.usuario_id
+     WHERE a.id = ?");
 mysqli_stmt_bind_param($stmt, "i", $id);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
@@ -49,7 +53,7 @@ $row = mysqli_fetch_assoc($result);
         <h1>Detalhes do Jogo</h1>
         <div class="top">
             <div class="info">
-                <div class="field"><span class="label">Nome:</span> <?= htmlspecialchars($row['nome']) ?></div>
+                <div class="field"><span class="label">Nome:</span> <?= htmlspecialchars($row['usuario_nome']) ?></div>
                 <div class="field"><span class="label">Avaliação:</span> <?= htmlspecialchars($row['avaliacao']) ?></div>
 
                 <div class="desc">

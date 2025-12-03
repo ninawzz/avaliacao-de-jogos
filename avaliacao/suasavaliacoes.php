@@ -9,9 +9,11 @@ require_once __DIR__ . '/componentes/topo.php';
 <?php
     require_once __DIR__ . '/admin/config.inc.php';
 
-    $sql = "SELECT a.*, j.nome AS jogo_nome, j.imagem AS jogo_imagem
+    $sql = "SELECT a.*, j.nome AS jogo_nome, j.imagem AS jogo_imagem, u.nome AS usuario_nome
             FROM avaliacoes a
-            LEFT JOIN jogos j ON a.jogo_id = j.id";
+            LEFT JOIN jogos j ON a.jogo_id = j.id
+            LEFT JOIN usuarios u ON a.usuario_id = u.id";
+
     $resultado = mysqli_query($conexao, $sql);
 
 if (!$resultado || mysqli_num_rows($resultado) === 0) {
@@ -52,7 +54,7 @@ if (!$resultado || mysqli_num_rows($resultado) === 0) {
                         </td>
 
                         <td><?= $dados['jogo_nome'] ?></td>
-                        <td><?= $dados['nome'] ?></td>
+                        <td><?= $dados['usuario_nome'] ?></td>
                         <td><?= $dados['avaliacao'] ?></td>
 
                             <td>

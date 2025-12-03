@@ -2,12 +2,12 @@
 
     require_once "admin/config.inc.php";
     $jogo_id = $_POST['jogo_id'];
-    $nome = $_POST['nome'];
+    $user_id = $_SESSION['usuario_id'];
     $avaliacao = $_POST['avaliacao'];
     $descricao = $_POST['descricao'];
 
-    $sql = "INSERT INTO avaliacoes (jogo_id, nome, avaliacao, descricao) VALUES (
-        '$jogo_id', '$_POST[nome]', '$_POST[avaliacao]', '$_POST[descricao]')";
+    $sql = "INSERT INTO avaliacoes (jogo_id, usuario_id, avaliacao, descricao) VALUES (
+        '$jogo_id', '$user_id', '$_POST[avaliacao]', '$_POST[descricao]')";
 
     $execute = mysqli_query($conexao, $sql);
 

@@ -6,7 +6,6 @@
 
     while ($suaavaliacao = mysqli_fetch_array($resultado)){
         $id = $suaavaliacao['id'];
-        $nome = $suaavaliacao['nome'];
         $avaliacao = $suaavaliacao['avaliacao'];
         $descricao = $suaavaliacao['descricao'];
     }
@@ -28,10 +27,6 @@
                         <h2 class="card-title text-center mb-4">Alterar Avaliação</h2>
                         <form action="?pg=altera_avaliacao" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="id" value="<?=$id?>">
-                            <div class="mb-3">
-                                <label for="avaliacao" class="form-label">Nome do avaliador:</label>
-                                <input type="text" class="form-control" id="nome" name="nome" value="<?=$nome?>" required>
-                            </div>
                             <div class="mb-3">
                                 <label for="avaliacao" class="form-label">Avaliação:</label>
                                 <input type="number" class="form-control" id="avaliacao" name="avaliacao" value="<?=$avaliacao?>" min="0" max="5" step="0.1" required>

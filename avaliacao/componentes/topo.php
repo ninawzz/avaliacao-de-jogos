@@ -9,6 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
+<?php
+if (session_status() === PHP_SESSION_NONE) session_start();
+$logado = !empty($_SESSION['usuario_id']);
+?>
 <nav class="navbar navbar-expand-sm bg-black navbar-dark">
     <div class="container-fluid">
         <div class="text-center"><img src="imagens/logo.png" style="width:90px;"></div>
@@ -17,18 +21,32 @@
             <li class="nav-item mx-4">
                 <a class="nav-link active" href="index.php?pg=conteudo">Início</a>
             </li>
+            <?php if ($logado): ?>
             <li class="nav-item mx-4">
                 <a class="nav-link" href="index.php?pg=jogos">Jogos</a>
             </li>
+            <?php endif; ?>
+
             <li class="nav-item mx-4">
                 <a class="nav-link" href="index.php?pg=creditos">Quem Somos</a>
             </li>
+
+            <?php if ($logado): ?>
             <li class="nav-item mx-4">
                 <a class="nav-link" href="index.php?pg=form_sugestao">Sugestões</a>
             </li>
-            <a class="nav-link btn bg-info text-white mx-4 px-3 rounded-pill" href="index.php?pg=avaliacao">
-            Cadastro/Login
-            </a>
+            <?php endif; ?>
+
+            <?php if ($logado): ?>
+                <a class="nav-link btn bg-info text-white mx-4 px-3 rounded-pill" href="index.php?pg=conta">
+                    Minha Conta
+                </a>
+                <a class="nav-link btn btn-outline-light mx-2" href="index.php?pg=logout">Sair</a>
+            <?php else: ?>
+                <a class="nav-link btn bg-info text-white mx-4 px-3 rounded-pill" href="index.php?pg=usuario_form">
+                    Cadastro/Login
+                </a>
+            <?php endif; ?>
         </ul>
     </div>
 </nav>

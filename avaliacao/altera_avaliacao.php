@@ -3,12 +3,10 @@
     require_once "admin/config.inc.php";
 
     $id = $_POST['id'];
-    $nome = $_POST['nome'];
     $avaliacao = $_POST['avaliacao'];
     $descricao= $_POST['descricao'];
 
     $sql = "UPDATE avaliacoes SET
-            nome = '$nome',
             avaliacao = '$avaliacao',
             descricao = '$descricao'
             WHERE id = '$id'";

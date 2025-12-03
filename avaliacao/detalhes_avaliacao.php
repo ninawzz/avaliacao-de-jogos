@@ -10,7 +10,11 @@ if (!$id) {
 }
 
 
-$stmt = mysqli_prepare($conexao, "SELECT id, jogo_id, nome, avaliacao, descricao FROM avaliacoes WHERE id = ?");
+$stmt = $stmt = mysqli_prepare($conexao, 
+    "SELECT a.avaliacao, a.descricao, u.nome AS usuario_nome
+     FROM avaliacoes a
+     LEFT JOIN usuarios u ON u.id = a.usuario_id
+     WHERE a.id = ?");
 mysqli_stmt_bind_param($stmt, "i", $id);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
@@ -27,7 +31,7 @@ $row = mysqli_fetch_assoc($result);
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8">
-    <title>Detalhes - <?= htmlspecialchars($row['nome']) ?></title>
+    <title>Detalhes - <?= ($row['usuario_nome']) ?></title>
     <style>
         .container { max-width:800px; margin:20px auto; font-family:Arial, sans-serif; }
         .card { border:1px solid #ccc; padding:16px; border-radius:6px; }
@@ -46,11 +50,11 @@ $row = mysqli_fetch_assoc($result);
 <body>
 <div class="container">
     <div class="card">
-        <h1>Detalhes do Jogo</h1>
+        <h1>Detalhes da Avaliação</h1>
         <div class="top">
             <div class="info">
-                <div class="field"><span class="label">Nome:</span> <?= htmlspecialchars($row['nome']) ?></div>
-                <div class="field"><span class="label">Avaliação:</span> <?= htmlspecialchars($row['avaliacao']) ?></div>
+                <div class="field"><span class="label">Nome do avaliador:</span> <?= ($row['usuario_nome']) ?></div>
+                <div class="field"><span class="label">Avaliação:</span> <?= ($row['avaliacao']) ?></div>
 
                 <div class="desc">
                     <div class="label">Descrição:</div>
@@ -62,7 +66,7 @@ $row = mysqli_fetch_assoc($result);
                         } else {
                             $paragraphs = preg_split('/\r?\n{2,}/', $raw);
                             foreach ($paragraphs as $p) {
-                                echo '<p>' . nl2br(htmlspecialchars($p)) . '</p>';
+                                echo '<p>' . nl2br(($p)) . '</p>';
                             }
                         }
                     ?>
