@@ -1,5 +1,5 @@
 <?php
-require_once "admin/config.inc.php";
+require_once "config.inc.php";
 
 
 $id = $_GET['id'];
@@ -31,7 +31,7 @@ $row = mysqli_fetch_assoc($result);
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8">
-    <title>Detalhes - <?= ($row['usuario_nome']) ?></title>
+    <title>Detalhes - <?= htmlspecialchars($row['nome']) ?></title>
     <style>
         .container { max-width:800px; margin:20px auto; font-family:Arial, sans-serif; }
         .card { border:1px solid #ccc; padding:16px; border-radius:6px; }
@@ -50,11 +50,11 @@ $row = mysqli_fetch_assoc($result);
 <body>
 <div class="container">
     <div class="card">
-        <h1>Detalhes da Avaliação</h1>
+        <h1>Detalhes do Jogo</h1>
         <div class="top">
             <div class="info">
-                <div class="field"><span class="label">Nome do avaliador:</span> <?= ($row['usuario_nome']) ?></div>
-                <div class="field"><span class="label">Avaliação:</span> <?= ($row['avaliacao']) ?></div>
+                <div class="field"><span class="label">Nome:</span> <?= htmlspecialchars($row['usuario_nome']) ?></div>
+                <div class="field"><span class="label">Avaliação:</span> <?= htmlspecialchars($row['avaliacao']) ?></div>
 
                 <div class="desc">
                     <div class="label">Descrição:</div>
@@ -66,7 +66,7 @@ $row = mysqli_fetch_assoc($result);
                         } else {
                             $paragraphs = preg_split('/\r?\n{2,}/', $raw);
                             foreach ($paragraphs as $p) {
-                                echo '<p>' . nl2br(($p)) . '</p>';
+                                echo '<p>' . nl2br(htmlspecialchars($p)) . '</p>';
                             }
                         }
                     ?>
@@ -74,7 +74,7 @@ $row = mysqli_fetch_assoc($result);
             </div>
         </div>
         <br>
-        <p><a href='?pg=suasavaliacoes' class="btn btn-primary w-100">Voltar</a></p>
+        <p><a href='?pg=avaliacao_usuarios' class="btn btn-primary w-100">Voltar</a></p>
     </div>
 </div>
 </body>
