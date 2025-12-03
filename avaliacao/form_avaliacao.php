@@ -39,10 +39,9 @@
                                 <label for="descricao" class="form-label">Descrição da avaliação:</label>
                                 <input type="text" class="form-control" id="descricao" name="descricao" required>
                             </div>
-                            <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+                            <button type="submit" class="btn w-100">Cadastrar</button>
                             <br>
                             <br>
-                            <a href='index.php?pg=jogos' class="btn btn-success w-100">Voltar</a>
                         </form>
                     </div>
                 </div>
