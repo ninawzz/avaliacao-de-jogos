@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/componentes/topo.php';
+require_once __DIR__ . '/topo_admin.php';
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -7,7 +7,7 @@ require_once __DIR__ . '/componentes/topo.php';
 <h2 class="text-center my-4">Lista de Avaliações</h2>
 
 <?php
-    require_once __DIR__ . '/admin/config.inc.php';
+    require_once __DIR__ . '/config.inc.php';
 
     $sql = "SELECT a.*, j.nome AS jogo_nome, j.imagem AS jogo_imagem
             FROM avaliacoes a
@@ -40,9 +40,9 @@ if (!$resultado || mysqli_num_rows($resultado) === 0) {
                         <td>
                             <?php
                                 $img = $dados['jogo_imagem'] ?? '';
-                                $imgPath = __DIR__ . '/imagem_jogos/' . $img;
+                                $imgPath = __DIR__ . '/../imagem_jogos/' . $img;
                                 if (!empty($img) && file_exists($imgPath)): ?>
-                                    <img src="imagem_jogos/<?= ($img) ?>"
+                                    <img src="../imagem_jogos/<?= ($img) ?>"
                                          width="90" height="90" style="object-fit:cover; border-radius:8px;">
                                 <?php else: ?>
                                     <div style="width:90px;height:90px;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;color:#888;">
@@ -55,25 +55,21 @@ if (!$resultado || mysqli_num_rows($resultado) === 0) {
                         <td><?= $dados['nome'] ?></td>
                         <td><?= $dados['avaliacao'] ?></td>
 
-                            <td>
-                                <a href="index.php?pg=detalhes_avaliacao&id=<?= urlencode($dados['id']) ?>"
-                                   class="btn btn-primary btn-sm mx-1">Ver</a>
-
-                                <a href="index.php?pg=form_avaliacoes_alterar&id=<?= urlencode($dados['id']) ?>"
-                                   class="btn btn-warning btn-sm mx-1">Alterar</a>
-
-                                <a href="index.php?pg=delete_avaliacao&id=<?= urlencode($dados['id']) ?>"
-                                   class="btn btn-danger btn-sm mx-1"
-                                   onclick="return confirm('Tem certeza que deseja excluir essa avaliação?')">Excluir</a>
-                            </td>
-                        </tr>
+                        <td>
+                            <a href="index.php?pg=admin_detalhes_avaliacao&id=<?= $dados['id'] ?>" 
+                                class="btn btn-primary btn-sm mx-1">
+                                Ver
+                            </a>
+                            <a href="index.php?pg=admin_delete_avaliacao&id=<?= $dados['id'] ?>"
+                                class="btn btn-danger btn-sm mx-1"
+                                onclick="return confirm('Tem certeza que deseja excluir essa avaliação?')">
+                                Excluir
+                            </a>
+                        </td>
+                    </tr>
                     <?php endwhile; ?>
                 </tbody>
             </table>
         </div>
     </div>
-    <br>
-<?php
-}
-require_once __DIR__ . '/componentes/rodape.php';
-?>
+<?php } ?>

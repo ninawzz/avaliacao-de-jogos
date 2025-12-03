@@ -8,9 +8,9 @@
     $resultado = mysqli_query($conexao, $sql);
 
     if($resultado){
-        echo "<h2>Jogo excluído com sucesso!</h2>";
-        echo "<a href='?pg=admin_jogos'>Voltar</a>";
+        echo '<div class="container"><h2 class="text-center my-4">Jogo excluído com sucesso!</h2></div>';
+        echo '<div class="text-center"><a href="index.php?pg=admin_jogos" class="btn btn-danger">Voltar</a></div>';
     }else{
-        echo "<h2>Erro ao excluir o jogo!</h2>";
-        echo "<a href='?pg=admin_jogos'>Voltar</a>";
+        echo '<div class="container"><h2 class="text-center my-4">Erro ao excluir jogo!</h2></div>';
+        echo '<div class="text-center"><a href="index.php?pg=admin_jogos" class="btn btn-danger">Voltar</a></div>';
     }
