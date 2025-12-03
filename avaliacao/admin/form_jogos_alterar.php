@@ -39,8 +39,7 @@
                                 <input type="text" class="form-control" id="genero" name="genero" value="<?=$genero?>" required>
                             </div>
                             <div class="mb-3">
-                                <label for="avaliacao" class="form-label">Avaliação:</label>
-                                <input type="number" class="form-control" id="avaliacao" name="avaliacao" value="<?=$avaliacao?>" min="0" max="5" step="0.1" required>
+                                <input type="hidden" type="number" class="form-control" id="avaliacao" name="avaliacao" value="<?=$avaliacao?>" min="0" max="5" step="0.1" required>
                             </div>
                             <div class="mb-3">
                                 <label for="descricao" class="form-label">Descrição:</label>
@@ -50,7 +49,8 @@
                                 <label for="imagem" class="form-label">Imagem:</label>
                                 <?php if (!empty($imagem)): ?>
                                     <div class="mb-2">
-                                        <img src="<?=$imagem?>" alt="Imagem atual" class="img-thumbnail" style="max-width: 150px;">
+                                        <input type="hidden" name="imagem_atual" value="<?=$imagem?>">
+                                        <img src="<?=$imagem?>" alt="Imagem atual" class="img-thumbnail" style="max-width: 150px;" value="<?=$imagem?>">
                                     </div>
                                 <?php endif; ?>
                                 <input type="file" class="form-control" id="imagem" name="imagem" accept="image/*">

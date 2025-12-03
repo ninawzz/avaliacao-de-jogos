@@ -24,8 +24,7 @@
                                 <input type="text" class="form-control" id="genero" name="genero" required>
                             </div>
                             <div class="mb-3">
-                                <label for="avaliacao" class="form-label">Avaliação:</label>
-                                <input type="number" class="form-control" id="avaliacao" name="avaliacao" max="5" value="0">
+                                <input type="hidden" type="number" class="form-control" id="avaliacao" name="avaliacao" max="5" value="0">
                             </div>
                             <div class="mb-3">
                                 <label for="descricao" class="form-label">Descrição:</label>
