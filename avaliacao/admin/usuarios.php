@@ -16,9 +16,9 @@ $resultado = mysqli_query($conexao, $sql);
 
 if (!$resultado || mysqli_num_rows($resultado) === 0) {
     echo '<div class="container"><h3 class="text-center my-4">Nenhum usuário cadastrado!</h3></div>';
-    echo '<div class="text-center"><a href="?pg=form_jogos" class="btn btn-success">Cadastrar Jogo</a></div>';
 } else {
     ?>
+    <div class="container">
         <div class="table-responsive">
             <table class="table table-striped table-bordered align-middle text-center">
                 <thead class="table-dark">
@@ -36,9 +36,10 @@ if (!$resultado || mysqli_num_rows($resultado) === 0) {
                         <td><?= $dados['nome'] ?></td>
                         <td><?= $dados['email'] ?></td>
                     </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 <?php } ?>
 </div>

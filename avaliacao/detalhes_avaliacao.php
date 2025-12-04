@@ -33,7 +33,7 @@ $row = mysqli_fetch_assoc($result);
     <meta charset="utf-8">
     <title>Detalhes - <?= ($row['usuario_nome']) ?></title>
 
-    <link rel="stylesheet" href="/jogos/avaliacao-de-jogos/avaliacao/style.css">
+    <link rel="stylesheet" href="style.css">
 
     <style>
         body {

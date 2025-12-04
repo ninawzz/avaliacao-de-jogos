@@ -8,7 +8,7 @@ require_once __DIR__ . '/componentes/topo.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/jogos/avaliacao-de-jogos/avaliacao/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <style>
         body {
@@ -24,11 +24,16 @@ require_once __DIR__ . '/componentes/topo.php';
 <?php
     require_once __DIR__ . '/admin/config.inc.php';
 
+    $usuario_id_logado = $_SESSION['usuario_id'] ?? null;
+
+    $uid = intval($usuario_id_logado);
+
     $sql = "SELECT a.*, j.nome AS jogo_nome, j.imagem AS jogo_imagem, u.nome AS usuario_nome
             FROM avaliacoes a
             LEFT JOIN jogos j ON a.jogo_id = j.id
-            LEFT JOIN usuarios u ON a.usuario_id = u.id";
-
+            LEFT JOIN usuarios u ON a.usuario_id = u.id
+            WHERE a.usuario_id = $uid
+            ORDER BY a.id DESC";
     $resultado = mysqli_query($conexao, $sql);
 
 if (!$resultado || mysqli_num_rows($resultado) === 0) {
