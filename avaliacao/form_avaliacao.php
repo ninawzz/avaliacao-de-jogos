@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/jogos/avaliacao-de-jogos/avaliacao/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         body {
             background: linear-gradient(to bottom, #6fb5e4ff, #0c5eaaff, #000000ff);
@@ -53,5 +53,3 @@
     <br>
 
     </div>
-</body>
-</html>

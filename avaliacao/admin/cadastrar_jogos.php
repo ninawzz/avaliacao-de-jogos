@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
+    header("Location: ../form_loginadm.php"); 
+    exit();
+}
 require_once "config.inc.php";
 
 $pasta = __DIR__ . "/../imagem_jogos/";

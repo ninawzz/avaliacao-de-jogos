@@ -1,4 +1,13 @@
-<?php $nome = "Game Boxe"; ?>
+<?php $nome = "Game Boxe";
+session_start();
+
+
+if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
+    header("Location: ../form_loginadm.php"); 
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,14 +21,18 @@
 <nav class="navbar navbar-expand-sm bg-black navbar-dark">
     <div class="container-fluid">
         <div class="text-center"><img src="../imagens/logo.png" style="width:90px;"></div>
-
         <ul class="navbar-nav">
             <li class="nav-item mx-4">
-                <a class="nav-link active" href="?pg=admin_jogos">Início</a>
+                <a class="nav-link active" href="?pg=admin_jogos">Jogos</a>
             <li class="nav-item mx-4">
                 <a class="nav-link active" href="?pg=sugestao_usuario">Sugestões</a>
             <li class="nav-item mx-4">
                 <a class="nav-link active" href="?pg=avaliacao_usuarios">Avaliações</a>
+            <li class="nav-item mx-4">
+                <a class="nav-link active" href="?pg=usuarios">Usuários</a>
+             <li class="nav-item mx-4">
+                <a class="nav-link active" href="../logout.php">Sair</a>
+                
 
     </div>
 </nav>

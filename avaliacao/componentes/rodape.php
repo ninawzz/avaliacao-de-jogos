@@ -25,6 +25,9 @@
           <li class="mb-2">
             <a href="index.php?pg=jogos" class="text-white text-decoration-none">Jogos</a>
           </li>
+          <li class="mb-2">
+            <a href="index.php?pg=form_loginadm" class="text-white text-decoration-none">Administrador</a>
+          </li>
         </ul>
       </div>
 

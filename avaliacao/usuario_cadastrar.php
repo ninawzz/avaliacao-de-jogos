@@ -7,7 +7,14 @@
         echo '<div class="text-center"><a href="index.php?pg=usuario_form" class="btn btn-secondary">Voltar</a></div>';
         exit;
     }
+    $email = $_POST['email'];
+    $check_email = mysqli_query($conexao, "SELECT id FROM usuarios WHERE email = '$email' LIMIT 1");
 
+if (mysqli_num_rows($check_email) > 0) {
+    echo '<div class="container"><h2 class="text-center my-4">Este e-mail já está cadastrado!</h2></div>';
+    echo '<div class="text-center"><a href="index.php?pg=usuario_form" class="btn btn-secondary">Voltar</a></div>';
+    exit;
+}
     $senha_hash = password_hash($_POST['senha_hash'], PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO usuarios (nome, email, senha_hash, criado_em)
@@ -17,6 +24,7 @@
                 '$senha_hash',
                 NOW()
             )";
+
 
     $execute = mysqli_query($conexao, $sql);
 

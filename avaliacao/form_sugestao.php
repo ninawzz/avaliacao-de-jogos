@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/jogos/avaliacao-de-jogos/avaliacao/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <style>
         body {
@@ -52,7 +52,7 @@
                             <input type="file" class="form-control" id="imagem" name="imagem" accept="image/*" required>
                         </div>
 
-                        <button type="submit" class="btn text-white w-100">Cadastrar</button>
+                        <button type="submit" class="btn text-black w-100">Cadastrar</button>
 
                         <br><br>
                     </form>

@@ -1,4 +1,9 @@
 <?php
+
+if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
+    header("Location: ../form_loginadm.php"); 
+    exit();
+}
 require_once "config.inc.php";
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {

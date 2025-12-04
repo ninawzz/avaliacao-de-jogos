@@ -4,6 +4,11 @@
 <h2 class="text-center my-4">Lista de Jogos</h2>
 
 <?php
+if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
+    header("Location: ../form_loginadm.php"); 
+    exit();
+}
+
 require_once "config.inc.php";
 
 $sql = "SELECT * FROM jogos";
