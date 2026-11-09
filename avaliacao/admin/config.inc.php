@@ -1,9 +1,11 @@
 <?php
+$host = getenv('DB_HOST') ?: 'db-gameboxe';
+$usuario = getenv('DB_USER') ?: 'gameboxe';
+$senha = getenv('DB_PASSWORD');
+$banco = getenv('DB_NAME') ?: 'avaliacao_de_jogos';
 
-   $conexao = mysqli_connect("localhost", "root", "");
+$conexao = mysqli_connect($host, $usuario, $senha, $banco);
 
-    $bd = mysqli_select_db($conexao, "avaliacao_de_jogos");
-
-    if(!$conexao){
-        echo "Conexão com banco de dados falhou!";
-    }
+if (!$conexao) {
+    die("Falha na conexão com o banco de dados.");
+}    

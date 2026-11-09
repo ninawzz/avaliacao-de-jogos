@@ -1,0 +1,82 @@
+
+services:
+  # PROXY REVERSO
+  # Será o único serviço com porta publicada na LAN.
+  proxy:
+    image: nginx:alpine
+    ports:
+      - "8083:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - gameboxe-web
+    networks:
+      rede_proxy:
+        ipv4_address: 10.10.10.2
+      rede_gameboxe:
+        ipv4_address: 10.10.10.35
+
+  # BANCO DO GAMEBOXE
+  db-gameboxe:
+    image: mariadb:10.11
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MARIADB_DATABASE: avaliacao_de_jogos
+      MARIADB_USER: gameboxe
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - gameboxe_dados:/var/lib/mysql
+      - ./avaliacao_de_jogos.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      rede_bd_gameboxe:
+        ipv4_address: 10.10.10.66
+
+  # APLICAÇÃO GAMEBOXE
+  gameboxe-web:
+    build: .
+    environment:
+      DB_HOST: db-gameboxe
+      DB_USER: gameboxe
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: avaliacao_de_jogos
+    depends_on:
+      db-gameboxe:
+        condition: service_healthy
+    networks:
+      rede_gameboxe:
+        ipv4_address: 10.10.10.34
+      rede_bd_gameboxe:
+        ipv4_address: 10.10.10.67
+
+volumes:
+  # Preserva o volume já criado.
+  gameboxe_dados:
+
+networks:
+  # Segmento exclusivo do proxy.
+  rede_proxy:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.10.0/27
+
+  # Rede compartilhada somente pelo proxy e GAMEBOXE.
+  rede_gameboxe:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.10.10.32/27
+
+  # Rede compartilhada somente pelo GAMEBOXE e seu banco.
+  rede_bd_gameboxe:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.10.10.64/27
